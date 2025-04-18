@@ -1,5 +1,9 @@
 
-
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 
 .luxury-header {
@@ -13,27 +17,29 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  border-radius: 15px; /* Slightly smaller for better balance */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: background 0.3s ease;
 }
 
+/* Explanation: Smoother shadow and minor radius tweak for a modern header */
 
-/* logo styling */
+/* Logo Styling */
 .luxury-header .logo {
-  filter: drop-shadow(0 0 10px #00ffff60);
   display: flex;
   align-items: center;
   font-size: 1.8rem;
   font-weight: bold;
-  letter-spacing: 2px;
   color: #00f0ff;
+  filter: drop-shadow(0 0 10px #00ffff80);
+  letter-spacing: 2px;
 }
 .logo img {
-  height: 60px;
+  height: 55px;
+  transition: transform 0.3s ease;
 }
 .logo img:hover {
   transform: rotate(5deg);
-  transition: 0.3s;
 }
 .logo span {
   font-size: 14px;
@@ -42,7 +48,7 @@
   font-style: italic;
 }
 
-/* navigation styling */
+/* Navigation */
 .nav-links {
   display: flex;
   gap: 25px;
@@ -52,21 +58,38 @@
   text-decoration: none;
   color: #fff;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00ffff;
+  transition: width 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: #00FFFF;
-  transition: all 0.3s ease-in-out;
+  color: #00ffff;
   letter-spacing: 1px;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
 
-/* Mobile styles */
+/* Explanation: Added a hover underline animation for links to enhance UX */
+
+/* Menu Toggle (Mobile) */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
+  color: #00f0ff;
 }
 
 @media (max-width: 768px) {
@@ -76,9 +99,10 @@
     right: 0;
     background: #111;
     flex-direction: column;
-    width: 200px;
+    width: 220px;
     padding: 20px;
     display: none;
+    border-radius: 10px;
     box-shadow: -5px 5px 15px rgba(0,0,0,0.6);
   }
 
@@ -88,11 +112,9 @@
 
   .menu-toggle {
     display: block;
-    color: #00f0ff;
   }
-
-  
 }
+
 
 
 
@@ -390,6 +412,7 @@
   margin-left: 5rem;
   
 }
+
 
 .split-text {
   flex: 1;
@@ -836,7 +859,7 @@
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    width: 92%;
   }
   
   .newsletter-form button {
