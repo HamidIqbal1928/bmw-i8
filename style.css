@@ -1,3 +1,19 @@
+
+ /* General Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* responsive header */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
 .luxury-header {
   display: flex;
   justify-content: space-between;
@@ -646,7 +662,8 @@
   background: linear-gradient(to bottom, #00cccc, black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;}
+  color: transparent;
+}
 
 /* Section Description */
 .section-description {
@@ -742,9 +759,128 @@
   .gallery-item img.large-image{
     display: block;
   }
-
-  
-
 }
+
+ /* Footer Section */
+  .footer {
+    background-color: black;
+    color: #ddd;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 10px 0;
+  }
+  
+  .footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #fff;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .social-icons li a {
+    color: #ddd;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons li a:hover {
+    color: #1e90ff;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .newsletter-form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .newsletter-form button {
+    padding: 10px;
+    font-size: 1rem;
+    background: linear-gradient(to right, #ffff, #007f99);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff;
+  }
+
+  .about-logo img {
+    width: 80px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  
+  .footer-bottom {
+    /* border-top: 2px solid #444; */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #e8e2e2;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
   
 
