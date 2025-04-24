@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW Digital Journey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="/style/Journey.css">
+ <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="luxury-header">
+        <div class="logo">
+          <img src="/images/bmw logo.png" alt="BMW Logo">
+          <span>The Ultimate Driving Machine</span>
+        </div>
+        <nav class="nav-links" id="navLinks">
+          <a href="/index.html">Home</a>
+          <a href="/html/Digital Journey.html">Digital Journey</a>
+          <a href="#">Models</a>
+          <a href="#">News</a>
+          <a href="#">About us</a>
+          <a href="#">Contact us</a>
+        </nav>
+      
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+      </header>
+    
+<!-- hero section -->
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="/video/starting car.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>The Digital Journey of BMW</h1>
+      <p>Luxury. Innovation. Excellence.</p>
+      <button>Explore Now</button>
+    </div>
+  </section>
+
+  <!-- fixed containor -->
+  <section class="parallax-section">
+    <div class="parallax-bg" style="background-image: url('/images/bmw10.jpg');"></div>
+    <div class="parallax-content">
+      <h2>BMW's Digital Legacy</h2>
+      <p>Experience emotion and engineering blended with digital perfection.</p>
+    </div>
+  </section>
+
+
+  <!-- filter gallery -->
+  <!-- <section class="gallery">
+    <h2 class="section-title">BMW Collections</h2>
+    <div class="filters">
+      <button onclick="filterGallery('all')">All</button>
+      <button onclick="filterGallery('series3')">Series 3</button>
+      <button onclick="filterGallery('series7')">Series 7</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item series3"><img src="/images/5 series.jpg" alt="BMW Series 3"></div>
+      <div class="gallery-item series7"><img src="/images/7 series.png" alt="BMW Series 7"></div>
+    </div>
+  </section> -->
+  
+
+  
+
+
+  <!-- on or off section  -->
+  <!-- AUDIO -->
+<!-- AUDIO -->
+<audio id="start-sound" loop>
+  <source src="/sounds/videoplayback.m4a" type="audio/mpeg">
+</audio>
+
+<!-- CONTAINER -->
+<div class="container">
+  <img id="engine-img" src="/images/bmw4.jpg" alt="Engine Image">
+  <video id="engine-video" muted>
+    <source src="/video/In and out - Armin Van Buuren _ BMW M5.mp4" type="video/mp4">
+  </video>
+
+  <div class="button-wrapper">
+    <div class="button-circle start-button" onclick="startEngine1()"> Start</div>
+    <div class="button-circle off-button" onclick="stopEngine1()">Engine Off</div>
+  </div>
+</div>
+
+  <script>
+
+const sound = document.getElementById("start-sound");
+const video = document.getElementById("engine-video");
+const image = document.getElementById("engine-img");
+const offBtn = document.querySelector(".off-button");
+const startBtn = document.querySelector(".start-button");
+
+function startEngine1() {
+  sound.currentTime = 0;
+  sound.play();
+  image.style.display = "none";
+  video.style.display = "block";
+  video.play();
+  offBtn.style.display = "flex";
+  startBtn.style.display = "none";
+}
+
+function stopEngine1() {
+  sound.pause();
+  sound.currentTime = 0;
+  video.pause();
+  video.style.display = "none";
+  image.style.display = "block";
+  startBtn.style.display = "flex";
+  offBtn.style.display = "none";
+}
+
+  //   const sound = document.getElementById("start-sound");
+  // const video = document.getElementById("engine-video");
+  // const image = document.getElementById("engine-img");
+  // const offBtn = document.querySelector(".off-button");
+  // const startBtn = document.querySelector(".start-button");
+
+  // function startEngine1() {
+  //   sound.currentTime = 0;
+  //   sound.play();
+  //   image.style.display = "none";
+  //   video.style.display = "block";
+  //   video.play();
+  //   offBtn.style.display = "flex";
+  //   startBtn.style.display = "none";
+  // }
+
+  // function stopEngine1() {
+  //   sound.pause();
+  //   sound.currentTime = 0;
+  //   video.pause();
+  //   video.style.display = "none";
+  //   image.style.display = "block";
+  //   startBtn.style.display = "flex";
+  //   offBtn.style.display = "none";
+  // }
+</script>
+  <!-- testimonials -->
+  <div class="testimonial-section">
+    <h1>What our Driver say's</h1>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="driver-info">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Driver Photo" class="driver-photo">
+          <div>
+            <h3 class="driver-name">Ali Khan</h3>
+            <p class="driver-role">BMW Driver</p>
+          </div>
+        </div>
+        <p class="driver-quote">
+          “Pioneer made my ride luxurious and safe. It was a smooth journey.”
+        </p>
+        <div class="quote-icon">“”</div>
+      </div>
+    <!-- card 2 -->
+      <div class="testimonial-card">
+        <div class="driver-info">
+          <img src="https://i.pravatar.cc/100?img=23" alt="Driver Photo" class="driver-photo">
+          <div>
+            <h3 class="driver-name">Usman Rafiq</h3>
+            <p class="driver-role">BMW v6 Driver</p>
+          </div>
+        </div>
+        <p class="driver-quote">
+          “Excellent support and modern features. I felt confident behind the wheel.”
+        </p>
+        <div class="quote-icon">“”</div>
+      </div>
+    <!-- card 3 -->
+      <div class="testimonial-card">
+        <div class="driver-info">
+          <img src="https://i.pravatar.cc/100?img=45" alt="Driver Photo" class="driver-photo">
+          <div>
+            <h3 class="driver-name">Sara Ali</h3>
+            <p class="driver-role">BMW v8 Driver</p>
+          </div>
+        </div>
+        <p class="driver-quote">
+          “Superb quality! The vehicles are always clean and ready.”
+        </p>
+        <div class="quote-icon">“”</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- newsletter section -->
+  <section class="subscription-section" style="margin-bottom: 40px;">
+    <div class="subscription-content" >
+      <div class="text-content">
+        <h2>Stay in the Driver’s Seat</h2>
+        <p>Subscribe to get the latest offers, updates, and insider tips from BMW!</p>
+      </div>
+  
+      <form class="subscription-form" onsubmit="return validateEmail();">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe Now</button>
+      </form>
+    </div>
+  </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-columns">
+            <!-- About Us Section -->
+            <div class="footer-column">
+              <div class="about-logo">
+                <img src="/images/bmw logo.png" alt="Logo" />
+              </div>         
+              <h3>BMW | Dream's Car</h3>
+              <p>
+                BMW – Not just a car, but the beginning of a thousand shared memories.Life is lived fully in motion.
+              </p>
+              <ul class="social-icons">
+                <li><a href="https://www.facebook.com/hamid.iqbal.12576049"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://github.com/HamidIqbal1928"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://www.instagram.com/hamid_iqbal77/ "><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/hamid-iqbal-a50430247/"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+      
+            <!-- Quick Links -->
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/html/My _University.html">BMW Model's</a></li>
+                <li><a href="/html/about.html">Digital Journey</a></li>
+                <li><a href="/html/Friends&Memories.html">News and Updates</a></li>
+                <li><a href="/html/contact_us.html">Contact us</a></li>
+              </ul>
+            </div>
+      
+            <!-- Newsletter Subscription -->
+            <div class="footer-column">
+              <h3>Newsletter</h3>
+              <p>Subscribe to get the latest updates and memories delivered to your inbox.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+      
+            <!-- Contact Information -->
+            <div class="footer-column">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-phone-alt"></i> +92 321 9326163</p>
+              <p><i class="fas fa-envelope"></i> hamid313500@gmail.com</p>
+              <p><i class="fas fa-map-marker-alt"></i> Chak 28 W/B vehari,Punjab,Pakistan</p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 Memories. All rights reserved. Designed with ❤ by Hamid.</p>
+          </div>
+        </div>
+      </footer>
+
+
+  <script src="/script.js"></script>
+
+</body>
+</html>
