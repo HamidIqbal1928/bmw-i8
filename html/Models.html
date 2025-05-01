@@ -2,117 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Car Engine Start</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #000;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    .container {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-    }
-
-    #engine-img, #engine-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    #engine-video {
-      display: none;
-    }
-
-    .button-circle {
-      position: absolute;
-      bottom: 40px;
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      color: white;
-      z-index: 2;
-      transition: 0.3s;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    .start-button {
-      left: 40px;
-      background-color: #28a745;
-    }
-
-    .off-button {
-      right: 40px;
-      background-color: #dc3545;
-      display: none;
-    }
-
-    .button-circle:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW Luxury Models</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style/model.css">
+  <link rel="stylesheet" href="/style/Journey.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <header class="luxury-header">
+    <div class="logo">
+      <img src="/images/bmw logo.png" alt="BMW Logo">
+      <span>The Ultimate Driving Machine</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="/index.html">Home</a>
+      <a href="/html/Digital Journey.html">Digital Journey</a>
+      <a href="/html/Models.html">Models</a>
+      <a href="/html/News.html">News</a>
+      <a href="#">About us</a>
+      <a href="#">Contact us</a>
+    </nav>
+  
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </header>
 
-<!-- AUDIO -->
-<audio id="start-sound" loop>
-  <source src="/sounds/videoplayback.m4a" type="audio/mpeg">
-</audio>
 
-<!-- CONTAINER -->
-<div class="container">
-  <img id="engine-img" src="/images/bmw11.jpg" alt="Engine Image">
-  <video id="engine-video" muted >
-    <source src="/video/In and out - Armin Van Buuren _ BMW M5.mp4" type="video/mp4">
-  </video>
+  <!-- hero section -->
+   <section class="hero1">
+    <video autoplay muted loop>
+      <source src="/video/bmw i5.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content1">
+      <h1>BMW Luxury Models</h1>
+      <p>Experience the pinnacle of luxury and performance.</p>
+      <a href="#models" class="btn">Explore More</a>
+    </div>
+   </section>
 
-  <div class="button-circle start-button" onclick="startEngine()">Start</div>
-  <div class="button-circle off-button" onclick="stopEngine()">Off</div>
+  <!-- Explore our features Models-->
+   <h2 class="section-title">Explored Our Feature Models</h2>
+   <section id="models" class="cards-grid">
+    <div class="model-card1">
+      <img src="https://cdn.pixabay.com/photo/2023/07/29/16/42/car-8157299_1280.jpg" alt="" >
+      <div class="info">
+        <h2>BMW M5</h2>
+        <p>V8 Twin Turbo | 600HP | 0-100 in 3.4s</p>
+        <button onclick="openEngineModal('/video/bmw i5.mp4')">Start Engine</button>
+      </div>
+    </div>
+    <div class="model-card1">
+      <img src="https://cdn.pixabay.com/photo/2022/12/28/09/42/race-car-7682522_1280.jpg" alt="">
+      <div class="info">
+        <h2>BMW I8</h2>
+        <p>Hybrid Powertrain | 369HP | Futuristic Desig</p>
+        <button onclick="openEngineModal('/video/bmw i5.mp4')">Start Engine</button>
+      </div>
+    </div>
+    <div class="model-card1">
+      <img src="https://cdn.pixabay.com/photo/2020/06/21/16/26/bmw-5325735_1280.jpg" alt="" >
+      <div class="info">
+        <h2>BMW Antique Car</h2>
+        <p>Luxury Sedan | 335HP | Advanced Tech</p>
+        <button onclick="openEngineModal('/video/bmw i5.mp4')">Start Engine</button>
+      </div>
+    </div>
+    <div class="model-card1">
+      <img src="https://cdn.pixabay.com/photo/2022/01/13/12/53/night-6935142_1280.jpg" alt="" >
+      <div class="info">
+        <h2>BMW M3</h2>
+        <p>Luxury Sedan | 335HP | Advanced Tech</p>
+        <button onclick="openEngineModal('/video/bmw i5.mp4')">Start Engine</button>
+      </div>
+    </div>
+   </section>
+
+    <!-- Engine Modal -->
+  <div class="modal" id="engineModal">
+    <span class="close" onclick="closeEngineModal()">&times;</span>
+    <video id="engineVideo" controls autoplay></video>
+  </div>
+
+  <!-- comparison section -->
+
+  <h2>Compare BMW Models</h2>
+
+  <div class="dropdowns">
+    <select id="model1" onchange="updateComparison()">
+      <option value="">Select First Model</option>
+    </select>
+
+    <select id="model2" onchange="updateComparison()">
+      <option value="">Select Second Model</option>
+    </select>
+  </div>
+
+  <div class="comparison" id="comparison"></div>
+
+
+ <!-- testimonials -->
+ <div class="testimonial-section">
+  <h1>What our Driver say's</h1>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="driver-info">
+        <img src="https://i.pravatar.cc/100?img=12" alt="Driver Photo" class="driver-photo">
+        <div>
+          <h3 class="driver-name">Hamid iqbal</h3>
+          <p class="driver-role">BMW Driver</p>
+        </div>
+      </div>
+      <p class="driver-quote">
+        BMW made my ride luxurious and safe. It was a smooth journey.”
+      </p>
+      <div class="quote-icon">“”</div>
+    </div>
+  <!-- card 2 -->
+    <div class="testimonial-card">
+      <div class="driver-info">
+        <img src="https://i.pravatar.cc/100?img=23" alt="Driver Photo" class="driver-photo">
+        <div>
+          <h3 class="driver-name">Noman Khan</h3>
+          <p class="driver-role">BMW v6 Driver</p>
+        </div>
+      </div>
+      <p class="driver-quote">
+        “Excellent support and modern features. I felt confident behind the wheel.”
+      </p>
+      <div class="quote-icon">“”</div>
+    </div>
+  <!-- card 3 -->
+    <div class="testimonial-card">
+      <div class="driver-info">
+        <img src="https://i.pravatar.cc/100?img=45" alt="Driver Photo" class="driver-photo">
+        <div>
+          <h3 class="driver-name">Hina Ali</h3>
+          <p class="driver-role">BMW v8 Driver</p>
+        </div>
+      </div>
+      <p class="driver-quote">
+        “Superb quality! The vehicles are always clean and ready.”
+      </p>
+      <div class="quote-icon">“”</div>
+    </div>
+  </div>
 </div>
 
-<script>
-  const sound = document.getElementById("start-sound");
-  const video = document.getElementById("engine-video");
-  const image = document.getElementById("engine-img");
-  const offBtn = document.querySelector(".off-button");
-  const startBtn = document.querySelector(".start-button");
+  <!-- chart section -->
 
-  function startEngine() {
-    sound.currentTime = 0;
-    sound.play();
-    image.style.display = "none";
-    video.style.display = "block";
-    video.play();
-    offBtn.style.display = "flex";
-    startBtn.style.display = "none";
-  }
 
-  function stopEngine() {
-    sound.pause();
-    sound.currentTime = 0;
-    video.pause();
-    video.style.display = "none";
-    image.style.display = "block";
-    startBtn.style.display = "flex";
-    offBtn.style.display = "none";
-  }
-</script>
+  <h2>BMW Performance Comparison</h2>
+
+  <div class="chart-container">
+    <canvas id="performanceChart"></canvas>
+  </div>
+
+  <!-- BOOK A DRIVE -->
+
+  <section class="test-drive-section">
+    <div class="test-drive-container">
+      <!-- Left Side -->
+      <div class="test-drive-left">
+        <img src="/images/bmw11.jpg" alt="BMW" class="test-drive-image" />
+        <h3>Get In Touch</h3>
+        <p>Pioneer BMW Dealership</p>
+        <p>Email: contact@bmwpioneer.com</p>
+        <p>Phone: +92-300-1234567</p>
+        <p>Location: Lahore, Pakistan</p>
+      </div>
+  
+      <!-- Right Side -->
+      <div class="test-drive-right">
+        <h2>Book a Test Drive</h2>
+        <form class="test-drive-form">
+          <div class="form-row">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-row">
+            <input type="tel" placeholder="Phone Number" required />
+            <select required>
+              <option value="">Select Model</option>
+              <option>BMW 3 Series</option>
+              <option>BMW 7 Series</option>
+              <option>BMW X5</option>
+              <option>BMW i8</option>
+            </select>
+          </div>
+          <input type="date" required />
+          <button type="submit">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-columns">
+          <!-- About Us Section -->
+          <div class="footer-column">
+            <div class="about-logo">
+              <img src="/images/bmw logo.png" alt="Logo" />
+            </div>         
+            <h3>BMW | Dream's Car</h3>
+            <p>
+              BMW – Not just a car, but the beginning of a thousand shared memories.Life is lived fully in motion.
+            </p>
+            <ul class="social-icons">
+              <li><a href="https://www.facebook.com/hamid.iqbal.12576049"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="https://github.com/HamidIqbal1928"><i class="fab fa-github"></i></a></li>
+              <li><a href="https://www.instagram.com/hamid_iqbal77/ "><i class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/hamid-iqbal-a50430247/"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+    
+          <!-- Quick Links -->
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/html/My _University.html">BMW Model's</a></li>
+              <li><a href="/html/about.html">Digital Journey</a></li>
+              <li><a href="/html/Friends&Memories.html">News and Updates</a></li>
+              <li><a href="/html/contact_us.html">Contact us</a></li>
+            </ul>
+          </div>
+    
+          <!-- Newsletter Subscription -->
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Subscribe to get the latest updates and memories delivered to your inbox.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+    
+          <!-- Contact Information -->
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-phone-alt"></i> +92 321 9326163</p>
+            <p><i class="fas fa-envelope"></i> hamid313500@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Chak 28 W/B vehari,Punjab,Pakistan</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Memories. All rights reserved. Designed with ❤ by Hamid.</p>
+        </div>
+      </div>
+    </footer>
+
+   <script src="/script.js"></script>
 
 </body>
 </html>

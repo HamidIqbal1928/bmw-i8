@@ -66,6 +66,9 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+
+  /* fixed containor */
+
   .parallax-section {
     position: relative;
     height: 100vh;
@@ -103,6 +106,23 @@
         margin-bottom: 2rem;
     }
 
+
+    
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: fixed; /* fallback for mobile */
+    height: 100%;
+  }
+
+  .parallax-content h2 {
+    font-size: 2rem;
+  }
+
+  .parallax-content p {
+    font-size: 1rem;
+  }
+}
   /* .gallery {
     padding: 4rem 2rem;
     text-align: center;
@@ -308,6 +328,7 @@
     height: 100vh;
     overflow: hidden;
   }
+
   
   #engine-img, #engine-video {
     position: absolute;
@@ -333,8 +354,7 @@
     z-index: 10;
     justify-content: center;
     align-items: center;
-  }
-  
+  }  
   /* BMW-inspired push button style */
   .button-circle {
     width: 110px;
@@ -371,7 +391,7 @@
   }
   
   .button-circle:hover {
-    background: radial-gradient(circle at 30% 30%, #111, #000);
+    background: radial-gradient(circle at 30% 30%, white, #000);
     box-shadow: 0 0 35px #ff0000, inset 0 0 15px #ff1a1a;
     transform: scale(1.15);
   }
@@ -387,15 +407,25 @@
   }
   
   .start-button {
-    background: radial-gradient(circle at 30% 30%, #4caf50, #087f23);
-    color: #fff;
+    /* background: radial-gradient(circle at 30% 30%, #4caf50, #087f23); */
+    background: linear-gradient(135deg, #a9a9a9, #555555); /* dark silver gradient */ 
+    color: #000;
     border-color: #c8facc;
   }
   
   .off-button {
-    background: radial-gradient(circle at 30% 30%, #b71c1c, #7f0000);
+    background: radial-gradient(circle at 30% 30%, #a9a9a9, #555555);
     color: #fff;
     border-color: #ffb3b3;
     display: none;
   }
+  
+  @media (max-width: 768px) {
+    #engine-video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+  
   

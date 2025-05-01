@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'orbitron', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.hero1{
+    position: relative;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.hero1 video {
+    width: 100%;
+     height: 100%;
+      object-fit: cover;
+       position: absolute;
+        top: 0; left: 0;
+            z-index: 1;
+            opacity: 0.5;
+  }
+
+.hero-content1{
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content1 h1{
+    font-size: 4rem;
+   background: linear-gradient(to top, #ffff, #007f99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+.hero-content1 p{
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    margin-bottom: 2rem;
+}
+.btn{
+    padding: 12px 30px;
+    background: linear-gradient(to right, #ffff, #007f99);
+    border: none;
+    font-size: 1.2rem;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+ transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+@media (max-width: 768px) {
+    .hero-content1 h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content1 p {
+        font-size: 1rem;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* Explore model section */
+
+.section-title{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    background: linear-gradient(to bottom, #fff, #007f99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cards-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 4rem;
+}
+
+.model-card1{
+    /* background: linear-gradient(to bottom, #fff, #007f99); */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 o 20px #000;
+    transition: 0.3s ease;
+}
+
+.model-card1:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff;
+}
+.model-card1 img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.model-card1 .info{
+    padding: 1rem;
+}
+.model-card1 h2{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.model-card1 p{
+    font-size: 1rem;
+    color: #ccc;
+}
+.model-card1 button{
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #fff, #007f99);
+    border: none;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.model-card1 button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .modal video {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+  }
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* compare cars */
+
+  .dropdowns {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, #fff, rgb(234, 185, 70));
+  }
+
+  .comparison {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px 0;
+    color: rgb(237, 200, 151);
+  }
+  #model1{
+    color: black;
+    background-color:  rgb(227, 190, 104);
+    border: 2px solid #000;
+  }
+  #model2{
+    color: black;
+    background-color:  rgb(227, 190, 104);
+    border: 2px solid #000;
+  }
+
+  .card {
+    background: #1c1c1c;
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
+    transition: 0.3s;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+    color: #00e5ff;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+  }
+
+  /* comparison chart */
+
+
+  h2 {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 3rem;
+    background: linear-gradient(to bottom, #fff, #007f99);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+  }
+  .chart-container {
+    max-width: 800px;
+    margin: auto;
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  canvas {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+
+  .test-drive-section {
+  background-color: rgb(252, 248, 219);
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.test-drive-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.test-drive-left, .test-drive-right {
+  flex: 1;
+  min-width: 300px;
+  padding: 40px;
+}
+
+.test-drive-left {
+  background: linear-gradient(to bottom right, #000000, #0f0f0f);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+}
+
+.test-drive-left h3 {
+  font-size: 2rem;
+  color: #00e5ff;
+  margin: 20px 0 10px;
+}
+
+.test-drive-left p {
+  margin: 5px 0;
+}
+
+.test-drive-image {
+  max-width: 300px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.test-drive-right {
+  background: #121212;
+}
+
+.test-drive-right h2 {
+  font-size: 2.5rem;
+  color: #00e5ff;
+  margin-bottom: 30px;
+}
+
+.test-drive-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.test-drive-form input,
+.test-drive-form select {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: white;
+  font-size: 1rem;
+}
+
+.test-drive-form button {
+  padding: 14px;
+  background: linear-gradient(to bottom, #00e5ff, #fff);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.test-drive-form button:hover {
+  background: #00bcd4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .test-drive-left,
+  .test-drive-right {
+    padding: 20px;
+  }
+}

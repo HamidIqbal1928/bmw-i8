@@ -775,8 +775,8 @@ html, body {
 
  /* Footer Section */
   .footer {
-    background-color: black;
-    color: #ddd;
+    background: linear-gradient(to top, rgb(58, 57, 57), black);   
+     color: #ddd;
     padding: 40px 20px;
   }
   
